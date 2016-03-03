@@ -1,0 +1,58 @@
+<!--
+Drew Carter
+12-14-2015
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Hunter Form app</title>
+  </head>
+
+
+<body>
+<br><br>
+<form action="index.html">
+    <input type="submit" value="Go back to index">
+</form>
+<br><br>
+<form action="/" method="post" id=patientInfo enctype="application/x-www-form-urlencoded">
+      <fieldset>
+       
+      <label for="name">Patient ID :  </label>
+      <input type="number" id="patientID" name="patientID" placeholder="Enter Patient ID #" autocomplete="off"  >
+        <br><br>
+      <label for="name">First Name :  </label>
+      <input type="text" id="fname" name="fname" placeholder="Enter Patient First Name" autocomplete="off" >
+        <br><br>
+        
+      <label for="name">Last Name :   </label>
+      <input type="text" id="lname" name="lname" placeholder="Enter Patient Last Name" autocomplete="off">
+        <br><br>   
+      <label for="name">Patient DoB: </label>
+      <input type="text" id="patientDOB" name="patientDOB" placeholder="YEAR-MONTH-DAY!" /autocomplete="off">
+        <br>
+ 
+ 
+  <br><br>
+    <input type="submit" id="patientInfo" name="patientInfo" value="Submit Patient Info Form" />
+  
+    <br><br>
+        <input type="reset" id="clear" value="Clear Form" />
+        <br><br>
+   </fieldset>
+
+</form>
+
+</body>
+</html>
+
+
+
+
+
+

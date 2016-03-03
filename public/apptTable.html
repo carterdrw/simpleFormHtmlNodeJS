@@ -1,0 +1,86 @@
+<!--
+Drew Carter
+12-14-2015
+
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Hunter Form app</title>
+  </head>
+
+
+<body>
+<br><br>
+<form action="index.html">
+    <input type="submit" value="Go back to index">
+</form>
+<br><br>
+<form action="/" method="post" enctype="application/x-www-form-urlencoded">
+
+
+  <fieldset>
+    <label for="name">Patient ID:</label>
+      <input type="text" id="patientID" name="patientID" placeholder="Enter Patient ID #" />
+        <br>
+    <label for="name">Apptointment Date:</label>
+      <input type="text" id="apptDate" name="apptDate" placeholder="Enter Apptointment Date" />
+        <br>
+    <label for="name">Patient Visit Type:</label>
+      <input type="text" id="patientVisitType" name="patientVisitType" placeholder="Enter Patient Visit Type" />
+        <br>
+           <label for="name">Appointment Visit Type:</label>
+        <input type="text" id="visit_apptType" name="visit_apptType" placeholder="Enter Appointment Visit Type" />
+        <br>
+           <label for="name">Visit Copay Collected?:</label>
+        <input type="text" id="visitCopayCollected" name="visitCopayCollected" placeholder="Enter Visit Copay Collected T/F" />
+        <br>
+           <label for="name">Billed to Primary?:</label>
+        <input type="text" id="apptBilledPrimary" name="apptBilledPrimary" placeholder="Enter Billed to Primary? T/F" />
+        <br>
+           <label for="name">Payment Received from Primary:</label>
+        <input type="" id="paymentPrimary" name="paymentPrimary" placeholder="Enter Payment Received from Primary" />
+        <br>
+           <label for="name">Billed to Secondary?:</label>
+        <input type="text" id="apptBilledSecondary" name="apptBilledSecondary" placeholder="Enter Billed to Secondary? T/F" />
+          <br>
+           <label for="name">Payment Received from Primary:</label>
+        <input type="" id="paymentBilledSecondary" name="paymentBilledSecondary" placeholder="Enter Payment Received from Secondary" />
+        <br>
+           <label for="name">Hospital Reimburesed Amount:</label>
+        <input type="text" id="hospitalReinbursed" name="hospitalReinbursed" placeholder="Enter Hospital Reimburesed Amount" />
+        <br>
+           <label for="name">Physicin Reimbursed Amount:</label>
+        <input type="text" id="physicianReimbursed" name="physicianReimbursed" placeholder="Enter Physicin Reimbursed Amount" />
+        <br>
+           <label for="name">Ancillary Charges Amount:</label>
+        <input type="text" id="ancillaryCharges" name="ancillaryCharges" placeholder="Enter Ancillary Charges Amount" />
+        <br>
+           <label for="name">Standard Reimbursment for Appt Ammount:</label>
+        <input type="text" id="standardReimbursmentForAppt" name="standardReimbursmentForAppt" placeholder="Enter Standard Reimbursment for Appt Ammount" />
+          <br>
+           <label for="name">Appointment Comments:</label>
+        <input type="text" id="apptComment" name="apptComment" placeholder="Enter Appointment Comments" /><br>
+<br><br>
+   <input type="submit" id="apptTable" name="apptTable" value="Submit Appointment Form" />
+   <br><br>
+        <input type="reset" id="reset" value="Clear All Forms" />
+ <br><br>
+
+      
+</fieldset> 
+
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
