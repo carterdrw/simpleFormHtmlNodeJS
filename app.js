@@ -144,34 +144,6 @@ break;
 });//app.postclose
 
 
-
-//app.post('/', function(req, res) {
-/*
-con.query('INSERT INTO apptTable SET ?',{
-patientID: patientID,
-apptDate: apptDate,
-patientVisitType: patientVisitType,
-visit_apptType: visit_apptType,
-visitCopayCollected: visitCopayCollected,
-apptBilledPrimary: apptBilledPrimary,
-paymentPrimary: paymentPrimary,			//TODO!! THIS WILL NEED FORMATTING FOR MONEY  TODO!!
-apptBilledSecondary: apptBilledSecondary,
-paymentSecondary:paymentSecondary,
-hospitalReimbursed: hospitalReimbursed,
-physicianReimbursed: physicianReimbursed,
-ancillaryCharges: ancillaryCharges,
-standardReimbursmentForAppt: standardReimbursmentForAppt,
-apptComment: apptComment
-},
-function(err, res)
-{if(err) 
- 	throw err;
-});
-} //switch close
-});//app.post func close
-
-//appointment id will need to be added/
-*/
 app.listen(port, function(error) {
   if(error) {
     console.log("Failed to launch server: " + error);
@@ -183,19 +155,11 @@ app.listen(port, function(error) {
 
 
 
-/*	if(patientInfo == 'Submit Patient Info')
-	{
-		console.log("im in the if");
-	}else{
-		console.log("im in the ELSE");
-	}*/
-
-
 /*
 
  billingNoteID   | int(4)  | NO   | PRI | NULL    | auto_increment |
 | billingNoteCode | int(11) | NO   |     | NULL    |                |
-| patientID       | int(11) | NO   |     | NULL    |                |
+| patientID       | int(5) | NO   |     | NULL    |                |
 | dateOfService   | date    | NO   |     | NULL    |              
 
 
@@ -203,10 +167,6 @@ app.listen(port, function(error) {
  dictationID | int(4) | NO   | PRI | NULL    | auto_increment |
 | apptDate    | date   | NO   |     | NULL    |                |
 | patientID   | int(5) | NO   |     | NULL    |                |
-
-
-
-
 
 
 
