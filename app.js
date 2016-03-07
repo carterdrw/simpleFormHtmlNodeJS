@@ -46,103 +46,104 @@ app.use(express.static("public"));
 app.post('/', function(req, res){
 
 		
-			//all values from form input
-			var patientID = req.body.patientID; //patientInfo table
-			var fname = req.body.fname;
-			var lname = req.body.lname;
-			var patientDOB = req.body.patientDOB;
+	//all values from form input
+	var patientID = req.body.patientID; //patientInfo table
+	var fname = req.body.fname;
+	var lname = req.body.lname;
+	var patientDOB = req.body.patientDOB;
 
-			var patientID = req.body.patientID;  //Apointment table
-			var apptDate = req.body.apptDate;
-			var patientVisitType = req.body.patientVisitType;
-			var visit_apptType = req.body.visit_apptType;
-			var visitCopayCollected = req.body.visitCopayCollected;
-			var apptBilledPrimary = req.body.apptBilledPrimary;
-			var paymentPrimary = req.body.paymentPrimary;
-			var apptBilledSecondary = req.body.apptBilledSecondary;
-			var paymentSecondary = req.body.paymentSecondary;
-			var hospitalReimbursed = req.body.hospitalReimbursed;
-			var physicianReimbursed = req.body.physicianReimbursed;
-			var ancillaryCharges = req.body.ancillaryCharges;
-			var standardReimbursmentForAppt = req.body.standardReimbursmentForAppt;
-			var apptComment = req.body.apptComment;
+	var patientID = req.body.patientID;  //Apointment table
+	var apptDate = req.body.apptDate;
+	var patientVisitType = req.body.patientVisitType;
+	var visit_apptType = req.body.visit_apptType;
+	var visitCopayCollected = req.body.visitCopayCollected;
+	var apptBilledPrimary = req.body.apptBilledPrimary;
+	var paymentPrimary = req.body.paymentPrimary;
+	var apptBilledSecondary = req.body.apptBilledSecondary;
+	var paymentSecondary = req.body.paymentSecondary;
+	var hospitalReimbursed = req.body.hospitalReimbursed;
+	var physicianReimbursed = req.body.physicianReimbursed;
+	var ancillaryCharges = req.body.ancillaryCharges;
+	var standardReimbursmentForAppt = req.body.standardReimbursmentForAppt;
+	var apptComment = req.body.apptComment;
 
-			var	billingNoteID = req.body.billingNoteID;  //billingNote table
-			var	billingNoteCode = req.body.billingNoteCode; 
-			var	patientID = req.body.patientID;
-			var	dateOfService = req.body.dateOfService;
+	var	billingNoteID = req.body.billingNoteID;  //billingNote table
+	var	billingNoteCode = req.body.billingNoteCode; 
+	var	patientID = req.body.patientID;
+	var	dateOfService = req.body.dateOfService;
 
-			var	dictationID = req.body.dictationID;
-			var	apptDate = req.body.apptDate;
-			var	patientID = req.body.patientID;
-			
-		if (req.body.patientID === '' ) {	//sanity check if submit pressed without data. 
-			console.log('duplicate');
-		}else { 
-
-switch (req.body.patientInfo || req.body.apptTable || req.body.billingNote || req.body.dictationSubmit) //test for correct submit button
-	{
-
-	case req.body.patientInfo:
-
+	var	dictationID = req.body.dictationID;
+	var	apptDate = req.body.apptDate;
+	var	patientID = req.body.patientID;
 	
-			console.log('Submit Patient Info Form');  //for testing This is from the the name tag html
+	if (req.body.patientID === '' ) {	//sanity check if submit pressed without data. 
+			console.log('duplicate');
+	}else { 
 
-			con.query('INSERT INTO patientInfo SET ?',{patientID: patientID, patientFirstName: fname, patientLastName: lname, patientDOB: patientDOB},
-		 	function(err, res)
+	switch (req.body.patientInfo || req.body.apptTable || req.body.billingNote || req.body.dictationSubmit) //test for correct submit button
 			{
-			if(err) 
-		  	throw err;
-			})
-			break;
+
+		case req.body.patientInfo:
+
+		console.log('Submit Patient Info Form');  //for testing This is from the the name tag html
+
+		con.query('INSERT INTO patientInfo SET ?',{patientID: patientID, patientFirstName: fname, patientLastName: lname, patientDOB: patientDOB},
+	 	function(err, res)
+		{
+		if(err) 
+	  	throw err;
+		})
+		break;
 			
-//************************  Below are new requirements to implement***************************
-case (req.body.apptTable):
-			//var patientInfo = req.body.patientInfo;
-			//console.log(fname);		//for testing This is from the ID tag in html
-			console.log('Submit Appointment Form');  //for testing This is from the the name tag html
-			//console.log('i have data');
-			//con.query('INSERT INTO patientInfo SET ?',{patientID: patientID, patientFirstName: fname, patientLastName: lname, patientDOB: patientDOB},
+//************************  Below is new code to implement***************************
+	case (req.body.apptTable):
+		//var patientInfo = req.body.patientInfo;
+		//console.log(fname);		//for testing This is from the ID tag in html
+		console.log('Submit Appointment Form');  //for testing This is from the the name tag html
+		//console.log('i have data');
+		//con.query('INSERT INTO patientInfo SET ?',{patientID: patientID, patientFirstName: fname, patientLastName: lname, patientDOB: patientDOB},
 /*		 	function(err, res)
-			{
-			if(err) 
-		  	throw err;
-			//});
-			});
-*/break;
-case "Submit Billing Note Form":
-			//var patientInfo = req.body.patientInfo;
-			//console.log(fname);		//for testing This is from the ID tag in html
-			console.log('Billing Note Form');  //for testing This is from the the name tag html
-			//console.log('i have data');
-			//con.query('INSERT INTO patientInfo SET ?',{patientID: patientID, patientFirstName: fname, patientLastName: lname, patientDOB: patientDOB},
+		{
+		if(err) 
+	  	throw err;
+		//});
+		});
+		*/
+		break;
+	case "Submit Billing Note Form":
+		//var patientInfo = req.body.patientInfo;
+		//console.log(fname);		//for testing This is from the ID tag in html
+		console.log('Billing Note Form');  //for testing This is from the the name tag html
+		//console.log('i have data');
+		//con.query('INSERT INTO patientInfo SET ?',{patientID: patientID, patientFirstName: fname, patientLastName: lname, patientDOB: patientDOB},
 /*		 	function(err, res)
-			{
-			if(err) 
-		  	throw err;
-			//});
-			});
-*/break;
-case req.body.dictationSubmit :
-			//var patientInfo = req.body.patientInfo;
-			//console.log(fname);		//for testing This is from the ID tag in html
-			console.log('dict id form');  //for testing This is from the the name tag html
-			//console.log('i have data');
-//			con.query('INSERT INTO patientInfo SET ?',{ dictationID: dictationID, patientID: patientID, apptDate: apptDate },
-//		 	function(err, res)
-//			{
-//			if(err) 
-//		  	throw err;
-//			//});
-//			});
-break;
+		{
+		if(err) 
+	  	throw err;
+		//});
+		});
+		*/
+		break;
+	case req.body.dictationSubmit :
+		//var patientInfo = req.body.patientInfo;
+		//console.log(fname);		//for testing This is from the ID tag in html
+		console.log('dict id form');  //for testing This is from the the name tag html
+		//console.log('i have data');
+//		con.query('INSERT INTO patientInfo SET ?',{ dictationID: dictationID, patientID: patientID, apptDate: apptDate },
+//	 	function(err, res)
+//		{
+//		if(err) 
+//	  	throw err;
+//		//});
+//		});
+		break;
 
-}
+	}
 
-}//close else
+	}//close else
 
 });//app.postclose
-
+	
 
 app.listen(port, function(error) {
   if(error) {
@@ -167,13 +168,6 @@ app.listen(port, function(error) {
  dictationID | int(4) | NO   | PRI | NULL    | auto_increment |
 | apptDate    | date   | NO   |     | NULL    |                |
 | patientID   | int(5) | NO   |     | NULL    |                |
-
-
-
-
-
-
-
 
 
  apptID                      | int(4)       | NO   | PRI | NULL    | auto_increment |
